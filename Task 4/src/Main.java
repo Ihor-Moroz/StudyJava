@@ -3,37 +3,47 @@ import java.util.Scanner;
 public class Main {
 
     public static int select;
+    private static double saveResult;
 
     public static void main(String[] args) {
-        double[] argsDouble=new double[args.length];
-        for(int i=0;i<args.length;i++)
-        {
-            argsDouble[i]=Double.parseDouble(args[i]);
-            System.out.print(" "+argsDouble[i]);
-        }
+        double[] argsDouble;
         Scanner reader=new Scanner(System.in);
-        select=Integer.valueOf(reader.next());
-        switch(select){
-            case 1:
-                System.out.println("1");
-                break;
-            case 2:
-                System.out.println("2");
-                break;
-            case 3:
-                System.out.println("3");
-                break;
-            case 4:
-                System.out.println("4");
-                break;
-            default:
-                System.out.println("Error!");
-                break;
+        String exit="no";
+        while(!exit.equals("yes")) {
+            if (args.length != 0) {
+                ArgRunner ar1 = new ArgRunner();
+                ar1.readArguments(args);
+                argsDouble = ar1.getArguments();
+            } else {
+                InteractRunner ir1 = new InteractRunner();
+                ir1.writeArguments();
+                argsDouble = ir1.getArguments();
+            }
+            Calculate calculator1 = new Calculate();
+            System.out.println('\n' + "1-Дадати,2-Відняти,3-Помножити,4-Поділити");
+            select = Integer.valueOf(reader.next());
+            switch (select) {
+                case 1:
+                    calculator1.add(argsDouble);
+                    break;
+                case 2:
+                    calculator1.subtract(argsDouble);
+                    break;
+                case 3:
+                    calculator1.multiply(argsDouble);
+                    break;
+                case 4:
+                    calculator1.separate(argsDouble);
+                    break;
+                default:
+                    System.out.println("Error!");
+                    break;
+            }
+            System.out.println('\n' + "Result = " + calculator1.getResult());
+            System.out.println("Exit yes/no ?");
+            System.out.println(argsDouble.length);
+            exit=reader.next();
         }
-        Calculate calculator1=new Calculate();
-        calculator1.add(argsDouble);
-
-        System.out.println('\n' + "Sum of arguments = "+calculator1.getResult());
-
     }
 }
+
