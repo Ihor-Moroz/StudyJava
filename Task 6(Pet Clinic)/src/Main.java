@@ -1,9 +1,17 @@
 public class Main {
-
+/*
+* Создать программу для обслуживания клиники домашних питомцев.
+* Должна быть возможно добавлять клиентов.
+* Указывать какой питомец есть у клиента.
+* Возможность искать по кличке питомца, по имени клиента.
+* Редактировать имя клиента, имя питомца.
+* Удалять клиента, питомца.
+* Возможность валидации.
+*/
     public static void main(String[] args) {
-        Animal d1=new Dog("ridik");
-        Client cl1=new Client("Ihor",d1);
+        /*Client cl1=new Client("Ihor",new Dog("ridik"));
         System.out.println(cl1);
-        cl1.getPet().makeSound();
+        cl1.getPet().makeSound();*/
+        
     }
 }
