@@ -1,5 +1,7 @@
 public interface Pet {
 
-    void makeSound();
+    void setName(String name);
+    String makeSound();
+    String getType();
     String getName();
 }

@@ -1,6 +1,6 @@
 public class Client {
-    private final String id;
-    private final Pet pet;
+    private String id;
+    private Pet pet;
 
     public Client(String id, Pet pet) {
         this.id = id;
@@ -13,6 +13,14 @@ public class Client {
 
     public Pet getPet() {
         return pet;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setPet(Pet pet) {
+        this.pet = pet;
     }
 
     @Override

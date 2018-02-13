@@ -10,7 +10,17 @@ public class Dog extends Animal {
     }
 
     @Override
-    public void makeSound() {
-        System.out.println(String.format("%s say : %s",this.getName(),"Gavv Gavv"));
+    public void setName(String name) {
+        super.setName(name);
+    }
+
+    @Override
+    public String getType() {
+        return "Це собака";
+    }
+
+    @Override
+    public String makeSound() {
+        return String.format("%s say : %s",this.getName(),"Гав Гав");
     }
 }
