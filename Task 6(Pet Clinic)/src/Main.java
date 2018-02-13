@@ -11,8 +11,8 @@ public class Main {
 * Возможность искать по кличке питомца, по имени клиента.+
 *
 * Редактировать имя клиента, имя питомца.+
-* Удалять клиента, питомца.
-* Возможность валидации.
+* Удалять клиента, питомца.+
+* Возможность валидации.-
 */
     public static void main(String[] args) {
         ArrayList <Client> clinic=new ArrayList<Client>();
@@ -30,7 +30,8 @@ public class Main {
             System.out.println("1- Додати клієнта");
             System.out.println("2- Пошук");
             System.out.println("3- Редагування даних");
-            System.out.println("4- Відображення інформації");
+            System.out.println("4- Видалення даних");
+            System.out.println("5- Відображення інформації");
             switch (Integer.parseInt(reader.next())) {
                 case 1://Додавання інфи
                     System.out.println("Введіть ім'я клієнта");
@@ -107,6 +108,14 @@ public class Main {
                     }
                     break;
                 case 4:
+                    System.out.println("Виберіть клієнта");
+                    for (int i = 0; i < clinic.size(); i++) {
+                        System.out.println(i + ")" + clinic.get(i).getId() + " " + clinic.get(i).getPet().getName());
+                    }
+                    int tempClientId = Integer.parseInt(reader.next());
+                    clinic.remove(tempClientId);
+                    break;
+                case 5:
                     for (int i = 0; i < clinic.size(); i++) {
                         System.out.println(i + ")" + clinic.get(i).getId() + " " + clinic.get(i).getPet().getName());
                     }
