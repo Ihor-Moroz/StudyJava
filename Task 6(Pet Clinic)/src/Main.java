@@ -122,7 +122,7 @@ public class Main {
                     break;
             }
             System.out.println("Якщо хочете вийти введіть- exit, якщо ні то введіть- no");
-            exit=reader.next();
+
         }
     }
 }
