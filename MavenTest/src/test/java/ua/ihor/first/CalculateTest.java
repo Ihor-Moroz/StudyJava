@@ -25,11 +25,22 @@ public class CalculateTest {
         assertEquals(8,test.getResult(),0);
     }
 
-    @Test
-    public void separate() throws Exception {
+    @Test(expected = UserException.class)
+    public void separateException() throws UserException{
         Calculate test=new Calculate();
-        test.separate(2,1);
-        assertEquals(2,test.getResult(),0);
+        test.separate();
     }
 
+    @Test
+    public void separate() throws UserException{
+        Calculate test=new Calculate();
+        test.separate(16,4);
+        assertEquals(4,test.getResult(),0);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void separateRuntimeException() throws UserException{
+        Calculate test=new Calculate();
+        test.separate(1,0);
+    }
 }

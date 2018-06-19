@@ -25,16 +25,32 @@ public class Main {
             select = Integer.valueOf(reader.next());
             switch (select) {
                 case 1:
-                    calculator1.add(argsDouble);
+                    try {
+                        calculator1.add(argsDouble);
+                    } catch (UserException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case 2:
-                    calculator1.subtract(argsDouble);
+                    try {
+                        calculator1.subtract(argsDouble);
+                    } catch (UserException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case 3:
-                    calculator1.multiply(argsDouble);
+                    try {
+                        calculator1.multiply(argsDouble);
+                    } catch (UserException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case 4:
-                    calculator1.separate(argsDouble);
+                    try {
+                        calculator1.separate(argsDouble);
+                    } catch (UserException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 default:
                     System.out.println("Error!");
@@ -42,7 +58,6 @@ public class Main {
             }
             System.out.println('\n' + "Result = " + calculator1.getResult());
             System.out.println("Exit yes/no ?");
-            System.out.println(argsDouble.length);
             exit=reader.next();
         }
     }
